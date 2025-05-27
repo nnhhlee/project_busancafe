@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Detail</title>
+  <link rel="stylesheet" href="cafedetail.css?v=1">
+</head>
+
+<body>
+  <header>
+    <h1>Taste of Busan – Café Discovery</h1>
+    <h3>Explore the most Instagrammable and cozy cafés in Busan.</h3>
+    <br>
+    <hr>
+    <br><br>
+  </header>
+  <main>
+    <button class="back-btn" style="background-color: rgb(3, 47, 14); font-weight: bold; width: 50px; height: 50px; font-size:xx-large;" onclick="history.back()">←</button>
+    <div style="border-color: white;" id="cafe-detail"></div>
+    
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const cafeName = params.get("name");
+
+    fetch('cafe.json')
+      .then(res => res.json())
+      .then(data => {
+        const cafe = data.cafes.find(c => c.Name === cafeName);
+        if (!cafe) return;
+
+        const container = document.getElementById('cafe-detail');
+        const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        container.innerHTML = `
+          <h1>${cafe.Name} <small>( Rates: ${cafe.Rating} )</small></h1>
+          <h2><i>${cafe.Description}</i></h2>
+          <br><br>
+          <img src="${cafe.Image}" alt="${cafe.Name}" class="cafe-image" width="400" height="400">
+          <br><br><br>
+
+          <div class="info">
+            <span>Interior: ${cafe.Interior}</span>
+            <span>View: ${cafe.View}</span>
+            <span>Menu: ${cafe.Menu}</span>
+            <span>Region: ${cafe.Region}</span>
+            <br><br>
+
+            <table class="open-hours">
+              <thead>
+                <tr><th>요일</th><th>영업시간</th></tr>
+              </thead>
+              <tbody>
+                ${cafe.Open.map((time, index) => {
+                  const [open, close] = time;
+                  return `<tr>
+                    <td>${weekdays[index]}</td>
+                    <td>${open === "00:00" && close === "00:00" ? "휴무" : `${open} ~ ${close}`}</td></tr>`;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+
+          <br>
+          <p><a href="${cafe.Location}" target="_blank">Go to the Google Map</a></p>
+          <br><br><br>
+        `;
+
+      });
+      
+  </script>
+  
+</body>
+
+</html>

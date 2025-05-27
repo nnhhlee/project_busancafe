@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taste of Busan – Café Discovery</title>
+    <link rel="stylesheet" href="cafe.css?v=1">
+</head>
+
+<body>
+    <header>
+        <br>
+        <h1>Taste of Busan – Café Discovery</h1>
+        <h3>Explore the most Instagrammable and cozy cafés in Busan.</h3>
+        <br><br><br>
+    </header>
+
+    <div class="grid-container">
+        <!-- 버튼 6개 -->
+        <div class="note-wrapper">
+            <button type="button" class="note-btn" data-type="open" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <span>Open</span>
+            </button>
+            <ul class="custom-dropdown" id="open-dropdown">
+                <li onclick="goToCafeList('open', 'Monday')">Monday</li>
+                <li onclick="goToCafeList('open', 'Tuesday')">Tuesday</li>
+                <li onclick="goToCafeList('open', 'Wednesday')">Wednesday</li>
+                <li onclick="goToCafeList('open', 'Thursday')">Thursday</li>
+                <li onclick="goToCafeList('open', 'Friday')">Friday</li>
+                <li onclick="goToCafeList('open', 'Saturday')">Saturday</li>
+                <li onclick="goToCafeList('open', 'Sunday')">Sunday</li>
+            </ul>
+        </div>
+
+        <div class="note-wrapper">
+            <button type="button" class="note-btn" data-type="view" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <span>View</span>
+            </button>
+            <ul class="custom-dropdown" id="view-dropdown">
+                <li onclick="goToCafeList('view', 'Ocean')">Ocean</li>
+                <li onclick="goToCafeList('view', 'Forest')">Forest</li>
+                <li onclick="goToCafeList('view', 'City')">City</li>
+                <li onclick="goToCafeList('view', 'Rooftop')">Rooftop</li>
+            </ul>
+        </div>
+
+        <div class="note-wrapper">
+            <button type="button" class="note-btn" data-type="menu" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <span>Menu</span>
+            </button>
+            <ul class="custom-dropdown" id="menu-dropdown">
+                <li onclick="goToCafeList('menu', 'Bakery')">Bakery</li>
+                <li onclick="goToCafeList('menu', 'Barista')">Barista</li>
+                <li onclick="goToCafeList('menu', 'Fruits')">Fruits</li>
+                <li onclick="goToCafeList('menu', 'Specialty')">Specialty</li>
+                <li onclick="goToCafeList('menu', 'Liqueur')">Liqueur</li>
+            </ul>
+        </div>
+
+        <div class="note-wrapper">
+            <button type="button" class="note-btn" data-type="interior" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <span>Interior</span>
+            </button>
+            <ul class="custom-dropdown" id="interior-dropdown">
+                <li onclick="goToCafeList('interior', 'Modern')">Modern</li>
+                <li onclick="goToCafeList('interior', 'Cozy & Cute')">Cozy &amp; Cute</li>
+                <li onclick="goToCafeList('interior', 'Industrial')">Industrial</li>
+                <li onclick="goToCafeList('interior', 'Classic')">Classic</li>
+                <li onclick="goToCafeList('interior', 'Vintage')">Vintage</li>
+                <li onclick="goToCafeList('interior', 'Scandinavian')">Scandinavian</li>
+            </ul>
+        </div>
+
+        <div class="note-wrapper">
+            <button type="button" class="note-btn" data-type="region" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <span>Region</span>
+            </button>
+            <ul class="custom-dropdown grid-dropdown" id="region-dropdown">
+                <li onclick="goToCafeList('region', '중구')">중구</li>
+                <li onclick="goToCafeList('region', '서구')">서구</li>
+                <li onclick="goToCafeList('region', '동구')">동구</li>
+                <li onclick="goToCafeList('region', '영도구')">영도구</li>
+                <li onclick="goToCafeList('region', '부산진구')">부산진구</li>
+                <li onclick="goToCafeList('region', '동래구')">동래구</li>
+                <li onclick="goToCafeList('region', '남구')">남구</li>
+                <li onclick="goToCafeList('region', '북구')">북구</li>
+                <li onclick="goToCafeList('region', '해운대구')">해운대구</li>
+                <li onclick="goToCafeList('region', '사하구')">사하구</li>
+                <li onclick="goToCafeList('region', '금정구')">금정구</li>
+                <li onclick="goToCafeList('region', '강서구')">강서구</li>
+                <li onclick="goToCafeList('region', '연제구')">연제구</li>
+                <li onclick="goToCafeList('region', '수영구')">수영구</li>
+                <li onclick="goToCafeList('region', '사상구')">사상구</li>
+                <li onclick="goToCafeList('region', '기장군')">기장군</li>
+            </ul>
+        </div>
+
+        <div class="note-wrapper">
+            <button type="button" class="note-btn" data-type="rating" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 3000);">
+                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <span>Rating</span>
+            </button>
+            <ul class="custom-dropdown" id="rating-dropdown">
+                <li onclick="goToCafeList('rating', '4.5')">4.5~</li>
+                <li onclick="goToCafeList('rating', '4')">4~</li>
+                <li onclick="goToCafeList('rating', '3.5')">3.5~</li>
+                <li onclick="goToCafeList('rating', '3')">3~</li>
+                <li onclick="goToCafeList('rating', '2.5')">2.5~</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.shakeTarget').forEach(img => {
+            img.addEventListener('click', () => {
+                img.classList.add('shake');
+                setTimeout(() => {
+                    img.classList.remove('shake');
+                }, 500); // 애니메이션 시간과 일치
+            });
+        });
+        document.querySelectorAll('.note-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // 이벤트 버블링 방지
+                const type = btn.getAttribute('data-type');
+                const dropdown = document.getElementById(type + '-dropdown');
+
+                const isVisible = dropdown.classList.contains('show');
+
+                // 모든 드롭다운 닫기
+                document.querySelectorAll('.custom-dropdown').forEach(dd => {
+                    dd.classList.remove('show');
+                });
+
+                // 클릭한 드롭다운만 토글
+                if (!isVisible) {
+                    dropdown.classList.add('show');
+                }
+            });
+        });
+
+
+        // 드롭다운 외부 클릭 시 모두 닫기
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.custom-dropdown').forEach(dd => {
+                dd.classList.remove('show');
+            });
+        });
+        function goToCafeList(type, value) {
+            const url = `cafelist.html?type=${encodeURIComponent(type)}&value=${encodeURIComponent(value)}`;
+            window.location.href = url;
+        }
+
+    </script>
+</body>
+
+</html>

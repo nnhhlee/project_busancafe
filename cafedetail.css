@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(3, 47, 14);
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-8px);
+  }
+
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+}
+
+.cafe-image {
+  transition: transform 0.3s;
+}
+
+.cafe-image:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 small {
+  font-size: 1rem;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.cafe-image {
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+a {
+  color: yellow;
+  text-decoration: underline;
+}
