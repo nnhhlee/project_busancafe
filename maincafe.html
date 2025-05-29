@@ -17,7 +17,6 @@
     </header>
 
     <div class="grid-container">
-        <!-- 버튼 6개 -->
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="open" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
@@ -127,26 +126,20 @@
         });
         document.querySelectorAll('.note-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.stopPropagation(); // 이벤트 버블링 방지
+                e.stopPropagation();
                 const type = btn.getAttribute('data-type');
                 const dropdown = document.getElementById(type + '-dropdown');
 
                 const isVisible = dropdown.classList.contains('show');
-
-                // 모든 드롭다운 닫기
                 document.querySelectorAll('.custom-dropdown').forEach(dd => {
                     dd.classList.remove('show');
                 });
-
-                // 클릭한 드롭다운만 토글
                 if (!isVisible) {
                     dropdown.classList.add('show');
                 }
             });
         });
 
-
-        // 드롭다운 외부 클릭 시 모두 닫기
         document.addEventListener('click', () => {
             document.querySelectorAll('.custom-dropdown').forEach(dd => {
                 dd.classList.remove('show');

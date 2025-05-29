@@ -59,7 +59,6 @@
         const hhmm = kst.toTimeString().slice(0, 5);
         const dayIndex = kst.getDay();
 
-        // 요일 문자열을 인덱스로 변환
         function getDayIndex(dayString) {
             const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
             return days.indexOf(dayString.toLowerCase());
@@ -145,15 +144,10 @@
                 })
             );
 
-            // 1. 영업 상태 확인 및 정렬
             filtered.sort((a, b) => {
                 const isOpenA = checkOpenStatus(a);
                 const isOpenB = checkOpenStatus(b);
-
-                // 1순위: 영업중인 카페 우선
                 if (isOpenA !== isOpenB) return isOpenB ? 1 : -1;
-
-                // 2순위: 평점 높은 순
                 return b.Rating - a.Rating;
             });
 

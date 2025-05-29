@@ -20,7 +20,7 @@ h3 {
   font-weight: normal;
   color: white;
 }
-/* 흔들리는 애니메이션 정의 */
+
 @keyframes shake {
   0%   { transform: translate(0, 0) rotate(0deg); }
   10%  { transform: translate(-30px, 0) rotate(-5deg); }
@@ -39,7 +39,7 @@ h3 {
   animation: shake 2s ease infinite;
   transform-origin: top center;
 }
-/* 그리드 */
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,7 +52,6 @@ h3 {
   position: relative;
 }
 
-/* 메모장 버튼 */
 .note-btn {
   position: relative;
   border: none;
@@ -85,10 +84,10 @@ h3 {
   pointer-events: none;
   white-space: nowrap;
 }
-/* 모든 드롭다운 공통: 기본 숨김 */
+
 .custom-dropdown {
   position: absolute;
-  display: none;            /* 기본 hidden */
+  display: none;
   background-color: rgb(255, 253, 136);
   color: white;
   text-shadow: 1px 1px 3px black;
@@ -99,41 +98,34 @@ h3 {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 보이기 토글 시 */
 .custom-dropdown.show {
-  /* grid-dropdown 여부에 따라 아래 두 속성 중 하나가 적용됨 */
   display: flex;
   flex-direction: column;
 }
 
-/* region 같은 그리드형 드롭다운 보이기 */
 .custom-dropdown.grid-dropdown.show {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: 8px 16px;
 }
 
-/* 일반 드롭다운 (오른쪽 위치) */
 .custom-dropdown:not(.grid-dropdown) {
   top: 50%;
   left: 105%;
   transform: translateY(-50%);
 }
 
-/* grid-dropdown 기본 위치 (센터 하단) */
 .grid-dropdown {
-  top: 105%;      /* 버튼 바로 아래 */
+  top: 105%;
   left: 50%;
-  bottom: auto;   /* 위쪽 배치 해제 */
+  bottom: auto;
   transform: translateX(-50%);
 }
 
-/* region 전용 z-index 높여서 버튼 위로 올라오게(필요 시 조절) */
 #region-dropdown {
   z-index: 105;
 }
 
-/* 항목 스타일은 그대로 유지 */
 .custom-dropdown li {
   padding: 6px 10px;
   cursor: pointer;
@@ -148,7 +140,6 @@ h3 {
   background-color: rgb(255, 255, 0);
 }
 
-/* 모바일 반응형 */
 @media (max-width: 767px) {
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
