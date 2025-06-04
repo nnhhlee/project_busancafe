@@ -142,10 +142,8 @@
             let filtered = allCafes.filter(cafe =>
                 Object.entries(activeFilters).every(([key, value]) => {
                     if (key === 'Rating') {
-                        // ① 카페의 평균 평점을 계산
-                        const avg = getCafeRating(cafe);   // 예: 3.7, 4.2 등
-                        // ② 필터로 선택된 값보다 큰지 비교
-                        return avg >= parseFloat(value);   // parseFloat("3.5") === 3.5
+                        const avg = getCafeRating(cafe);
+                        return avg >= parseFloat(value);
                     } else if (key === 'Open') {
                         const selectedDayIndex = getDayIndex(value);
                         const [open, close] = cafe.Open[selectedDayIndex];
@@ -179,7 +177,6 @@
         function renderCafeList(cafes) {
             const listEl = document.getElementById('cafe-list');
             listEl.innerHTML = cafes.map(cafe => {
-                // 1) CafeType에 따른 아이콘 결정
                 let iconHTML = '';
                 if (cafe.CafeType === 'Book') {
                     iconHTML = `<img src="book.png" alt="Book" style="width:1em; height:1em; vertical-align: middle; margin-left: 0.3em;">`;

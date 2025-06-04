@@ -400,7 +400,6 @@ app.post('/api/bookmark', validateCafeNumber, async (req, res) => {
     const alreadyBookmarked = user.bookmark.includes(cafeNumber);
 
     if (alreadyBookmarked) {
-      // remove bookmark
       user.bookmark = user.bookmark.filter(id => id !== cafeNumber);
       saveUsers(users);
       return res.json({
@@ -409,7 +408,6 @@ app.post('/api/bookmark', validateCafeNumber, async (req, res) => {
         bookmarkCount: user.bookmark.length
       });
     } else {
-      // add bookmark
       user.bookmark.push(cafeNumber);
       saveUsers(users);
       return res.status(201).json({
