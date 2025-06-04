@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1748923198804,
+    "username": "test1",
+    "email": "test1@test1",
+    "name": "test1",
+    "password": "test1",
+    "joinDate": "2025-06-03T03:59:58.804Z",
+    "bookmark": [
+      2,
+      6,
+      3,
+      10,
+      7,
+      4,
+      16
+    ]
+  },
+  {
+    "id": 1748927175523,
+    "username": "test2",
+    "email": "test2@test2",
+    "name": "test2",
+    "password": "test2",
+    "joinDate": "2025-06-03T05:06:15.523Z",
+    "bookmark": [
+      9,
+      14,
+      5,
+      10,
+      1,
+      2,
+      4,
+      7
+    ]
+  },
+  {
+    "id": 1748989844478,
+    "username": "test3",
+    "email": "test3@test3",
+    "name": "test3",
+    "password": "test3",
+    "joinDate": "2025-06-03T22:30:44.478Z",
+    "bookmark": []
+  },
+  {
+    "id": 1749000002245,
+    "username": "test4",
+    "email": "test4@test4",
+    "name": "test4",
+    "password": "test4",
+    "joinDate": "2025-06-04T01:20:02.245Z",
+    "bookmark": []
+  }
+]

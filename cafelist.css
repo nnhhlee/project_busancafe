@@ -56,6 +56,10 @@ header {
   transition: all 0.3s;
 }
 
+.back-btn:hover {
+  transform: scale(1.2);
+}
+
 .cafe-item {
   transition: transform 0.3s;
 }
@@ -127,6 +131,16 @@ main {
   color: white;
 }
 
+#cafe-table a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#cafe-table a:visited {
+  color: inherit;
+}
+
+
 @media (max-width: 767px) {
   #cafe-table {
     font-size: 0.9rem;
@@ -136,13 +150,4 @@ main {
   #cafe-table td {
     padding: 6px;
   }
-}
-
-#cafe-table a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-#cafe-table a:visited {
-  color: inherit;
 }

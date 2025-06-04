@@ -10,15 +10,17 @@
 
 <body>
     <header>
+        <div id="top-buttons"></div>
         <br>
-        <h1>Taste of Busan – Café Discovery</h1>
+        <h1>Busan Café Discovery</h1>
         <h3>Explore the most Instagrammable and cozy cafés in Busan.</h3>
         <br><br><br>
     </header>
 
     <div class="grid-container">
         <div class="note-wrapper">
-            <button type="button" class="note-btn" data-type="open" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+            <button type="button" class="note-btn" data-type="open"
+                onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
                 <span>Open</span>
             </button>
@@ -34,7 +36,8 @@
         </div>
 
         <div class="note-wrapper">
-            <button type="button" class="note-btn" data-type="view" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+            <button type="button" class="note-btn" data-type="view"
+                onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
                 <span>View</span>
             </button>
@@ -47,7 +50,8 @@
         </div>
 
         <div class="note-wrapper">
-            <button type="button" class="note-btn" data-type="menu" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+            <button type="button" class="note-btn" data-type="menu"
+                onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
                 <span>Menu</span>
             </button>
@@ -61,7 +65,8 @@
         </div>
 
         <div class="note-wrapper">
-            <button type="button" class="note-btn" data-type="interior" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+            <button type="button" class="note-btn" data-type="interior"
+                onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
                 <span>Interior</span>
             </button>
@@ -76,7 +81,8 @@
         </div>
 
         <div class="note-wrapper">
-            <button type="button" class="note-btn" data-type="region" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
+            <button type="button" class="note-btn" data-type="region"
+                onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
                 <span>Region</span>
             </button>
@@ -101,7 +107,8 @@
         </div>
 
         <div class="note-wrapper">
-            <button type="button" class="note-btn" data-type="rating" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 3000);">
+            <button type="button" class="note-btn" data-type="rating"
+                onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 3000);">
                 <img src="./memoimg.png" alt="Note" class="shakeTarget">
                 <span>Rating</span>
             </button>
@@ -116,6 +123,32 @@
     </div>
 
     <script>
+        const USER_COOKIE_KEY = "CAFE_USER";
+
+        function getLoggedInUser() {
+            const cookieString = document.cookie;
+            const match = cookieString.match(new RegExp(`${USER_COOKIE_KEY}=([^;]+)`));
+            return match ? JSON.parse(decodeURIComponent(match[1])) : null;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const user = getLoggedInUser();
+            const container = document.getElementById("top-buttons");
+
+            if (!container) return;
+
+            if (user) {
+                container.innerHTML = `
+        <button style="width: 100px;" onclick="location.href='/logout'">Logout</button>
+        <button style="width: 100px;" onclick="location.href='/bookmarklist.html'">Bookmark</button>
+      `;
+            } else {
+                container.innerHTML = `
+        <button style="width: 100px;" onclick="location.href='/signup.html'">Signup</button>
+        <button style="width: 100px;" onclick="location.href='/login.html'">Login</button>
+      `;
+            }
+        });
         document.querySelectorAll('.shakeTarget').forEach(img => {
             img.addEventListener('click', () => {
                 img.classList.add('shake');

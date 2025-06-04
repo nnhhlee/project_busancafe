@@ -4,21 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Café List – Taste of Busan</title>
+    <title>Café List</title>
     <link rel="stylesheet" href="cafelist.css?v=1">
 </head>
 
 <body>
     <header>
-        <button class="back-btn" style="background-color: rgb(3, 47, 14); font-weight: bold; width: 50px; height: 50px; font-size:xx-large;" onclick="history.back()">←</button>
+        <button class="back-btn"
+            style="background-color: rgb(3, 47, 14); font-weight: bold; width: 50px; height: 50px; font-size:xx-large;"
+            onclick="history.back()">←</button>
 
-        <h1>Taste of Busan – Café Discovery</h1>
-        <h3>Explore the most Instagrammable and cozy cafés in Busan.</h3>
+        <h1 id="page-title">Café List</h1>
         <br><br>
         <hr style="width : 60%;">
         <br>
         <div class="filter-section" id="dynamicFilters"></div>
-        
+
     </header>
 
     <main>
@@ -41,6 +42,8 @@
         const params = new URLSearchParams(location.search);
         const rawType = params.get('type');
         const initialValue = params.get('value');
+        const pageTitle = document.getElementById('page-title');
+        pageTitle.textContent = `${initialValue} - Café List`;
 
         let allCafes = [];
         const activeFilters = {};
@@ -58,6 +61,13 @@
         const kst = new Date(utc + 9 * 3600000);
         const hhmm = kst.toTimeString().slice(0, 5);
         const dayIndex = kst.getDay();
+
+        function getCafeRating(cafe) {
+            if (cafe.Rating && cafe.Rating.count > 0) {
+                return cafe.Rating.total / cafe.Rating.count;
+            }
+            return 0;
+        }
 
         function getDayIndex(dayString) {
             const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
@@ -82,12 +92,10 @@
             filterKeys.forEach(filterKey => {
                 if (activeFilters[filterKey]) return;
 
-                let uniqueValues = [];
                 if (filterKey === 'Rating') {
-                    uniqueValues = [...new Set(allCafes.map(cafe =>
-                        Math.floor(cafe.Rating * 2) / 2
-                    ))].sort((a, b) => b - a);
-                } else {
+                    uniqueValues = [3, 3.5, 4.0, 4.5];
+                }
+                else {
                     uniqueValues = [...new Set(allCafes.map(cafe => cafe[filterKey]))];
                 }
 
@@ -100,7 +108,7 @@
                         id="${filterKey}Filter"
                         onchange="updateFilter('${filterKey}', this.value)"
                     >
-                        <option value="">전체</option>
+                        <option value="">All</option>
                         ${uniqueValues.map(value => `
                             <option value="${value}">
                                 ${filterKey === 'Rating' ? `${value}+` : value}
@@ -134,7 +142,10 @@
             let filtered = allCafes.filter(cafe =>
                 Object.entries(activeFilters).every(([key, value]) => {
                     if (key === 'Rating') {
-                        return cafe[key] >= parseFloat(value);
+                        // ① 카페의 평균 평점을 계산
+                        const avg = getCafeRating(cafe);   // 예: 3.7, 4.2 등
+                        // ② 필터로 선택된 값보다 큰지 비교
+                        return avg >= parseFloat(value);   // parseFloat("3.5") === 3.5
                     } else if (key === 'Open') {
                         const selectedDayIndex = getDayIndex(value);
                         const [open, close] = cafe.Open[selectedDayIndex];
@@ -148,7 +159,7 @@
                 const isOpenA = checkOpenStatus(a);
                 const isOpenB = checkOpenStatus(b);
                 if (isOpenA !== isOpenB) return isOpenB ? 1 : -1;
-                return b.Rating - a.Rating;
+                return getCafeRating(b) - getCafeRating(a);
             });
 
             renderCafeList(filtered);
@@ -167,16 +178,32 @@
 
         function renderCafeList(cafes) {
             const listEl = document.getElementById('cafe-list');
-            listEl.innerHTML = cafes.map(cafe => `
-                <tr class="${checkOpenStatus(cafe) ? 'open' : 'closed'}">
-                    <td><a href="cafedetail.html?name=${encodeURIComponent(cafe.Name)}">${cafe.Name}</a></td>
-                    <td>${cafe.View}</td>
-                    <td>${cafe.Menu}</td>
-                    <td>${cafe.Interior}</td>
-                    <td>${cafe.Region}</td>
-                    <td>${cafe.Rating.toFixed(1)}</td>
-                </tr>
-            `).join('');
+            listEl.innerHTML = cafes.map(cafe => {
+                // 1) CafeType에 따른 아이콘 결정
+                let iconHTML = '';
+                if (cafe.CafeType === 'Book') {
+                    iconHTML = `<img src="book.png" alt="Book" style="width:1em; height:1em; vertical-align: middle; margin-left: 0.3em;">`;
+                } else if (cafe.CafeType === 'Pet') {
+                    iconHTML = `<img src="bone.png" alt="Pet" style="width:1em; height:1em; vertical-align: middle; margin-left: 0.3em;">`;
+                } else if (cafe.CafeType === 'Music') {
+                    iconHTML = `<img src="music.png" alt="Music" style="width:1em; height:1em; vertical-align: middle; margin-left: 0.3em;">`;
+                }
+
+                return `
+      <tr class="${checkOpenStatus(cafe) ? 'open' : 'closed'}">
+        <td>
+          <a href="cafedetail.html?name=${encodeURIComponent(cafe.Name)}&id=${cafe.Cafenumber}">
+            ${cafe.Name} ${iconHTML}
+          </a>
+        </td>
+        <td>${cafe.View}</td>
+        <td>${cafe.Menu}</td>
+        <td>${cafe.Interior}</td>
+        <td>${cafe.Region}</td>
+        <td>${getCafeRating(cafe).toFixed(1)}</td>
+      </tr>
+    `;
+            }).join('');
         }
     </script>
 </body>
