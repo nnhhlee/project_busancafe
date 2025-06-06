@@ -12,16 +12,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (!container) return;
 
+    const buttonStyle = `
+        <span>{LABEL}</span>
+        <img src="/iconimg/eraser.png" alt="Button Icon">
+    `;
+
     if (user) {
         container.innerHTML = `
-        <button style="width: 100px;" onclick="location.href='/logout'">Logout</button>
-        <button style="width: 100px;" onclick="location.href='/bookmarklist.html'">Bookmark</button>
-      `;
+            <button onclick="location.href='/logout'"> 
+                ${buttonStyle.replace('{LABEL}', 'LOGOUT')}
+            </button>
+            <button onclick="location.href='/bookmarklist.html'">
+                ${buttonStyle.replace('{LABEL}', 'BOOKMARK')}
+            </button>
+        `;
     } else {
         container.innerHTML = `
-        <button style="width: 100px;" onclick="location.href='/signup.html'">Signup</button>
-        <button style="width: 100px;" onclick="location.href='/login.html'">Login</button>
-      `;
+            <button onclick="location.href='/signup.html'">
+                ${buttonStyle.replace('{LABEL}', 'SIGNUP')}
+            </button>
+            <button onclick="location.href='/login.html'">
+                ${buttonStyle.replace('{LABEL}', 'LOGIN')}
+            </button>
+        `;
     }
 });
 document.querySelectorAll('.shakeTarget').forEach(img => {

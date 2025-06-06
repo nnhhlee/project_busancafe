@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-    <link rel="stylesheet" href="/cssfiles/cafe.css?v=1">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+  <link rel="stylesheet" href="/cssfiles/cafe.css?v=1">
+  <style>
     input[type="text"],
     input[type="password"] {
       width: 450px;
@@ -16,47 +17,58 @@
       padding: 0.4em;
       display: block;
     }
+
     label {
       font-size: 1.5em;
       display: block;
       margin-bottom: 0.5em;
     }
+
     button {
       font-size: 2em;
       margin: 1.5em auto 1.5em auto;
       cursor: pointer;
       display: block;
     }
+
     button:hover {
       background-color: black;
       color: white;
     }
+
     .links a {
       font-size: 1.5em;
       color: rgb(255, 255, 0);
       text-decoration: none;
     }
-    .form-container > * {
+
+    .form-container>* {
       margin-bottom: 1.5em;
     }
   </style>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2 style="font-size:xx-large;">LOGIN</h2>
-        <form method="POST" action="/login">
-            <label for="username">username:</label>
-            <input type="text" name="username" required>
-            <br>
-            <label for="password">password:</label>
-            <input type="password" name="password" required>
-            <br>
-            <button type="submit">login</button>
-        </form>
-        <br><br>
-        <div class="links">
-            <a href="/signup.html">SIGN UP</a>
-        </div>
+  <header>
+    <br>
+    <h1>LOGIN</h1>
+    <br><br><br>
+  </header>
+  <div class="form-container">
+    <form method="POST" action="/login">
+      <label for="username">username:</label>
+      <input type="text" name="username" required>
+      <br>
+      <label for="password">password:</label>
+      <input type="password" name="password" required>
+      <br>
+      <button type="submit">login</button>
+    </form>
+    <br><br>
+    <div class="links">
+      <a href="/signup.html">SIGN UP</a>
     </div>
+  </div>
 </body>
+
 </html>
