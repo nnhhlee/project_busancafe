@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const fs = require('fs');
 
 const app = express();
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
 const USER_COOKIE_KEY = 'CAFE_USER';
 
@@ -459,6 +459,6 @@ app.delete('/api/bookmark', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
