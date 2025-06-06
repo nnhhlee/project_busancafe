@@ -1,0 +1,1296 @@
+{
+  "cafes": [
+    {
+      "Name": "Cafe MAIN",
+      "Description": "흰여울문화마을의 오션뷰 힐링 카페",
+      "Cafenumber": 1,
+      "View": "Ocean",
+      "Menu": "Barista",
+      "Interior": "Modern",
+      "Region": "영도구",
+      "Rating": {
+        "total": 9.5,
+        "count": 2,
+        "reviews": [
+          {
+            "username": "test1",
+            "rating": 4.5,
+            "content": "good!!",
+            "date": "2025-06-03T15:43:24.554Z"
+          },
+          {
+            "username": "test5",
+            "rating": 5,
+            "content": "nice",
+            "date": "2025-06-05T07:15:01.705Z"
+          }
+        ]
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "00:00",
+          "00:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ]
+      ],
+      "Image": "../cafeimg/메인.jpg",
+      "Location": "https://maps.app.goo.gl/SvZbBTv7ZGEibBrn8"
+    },
+    {
+      "Name": "아브라함 커피",
+      "Description": "드립커피 전문 로스터리 카페",
+      "Cafenumber": 2,
+      "View": "Ocean",
+      "Menu": "Barista",
+      "Interior": "Industrial",
+      "Region": "영도구",
+      "Rating": {
+        "total": 4.5,
+        "count": 1,
+        "reviews": [
+          {
+            "username": "test1",
+            "rating": 4.5,
+            "content": "asd",
+            "date": "2025-06-03T04:53:58.991Z"
+          }
+        ]
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "10:00",
+          "21:00"
+        ],
+        [
+          "10:00",
+          "21:00"
+        ],
+        [
+          "10:00",
+          "21:00"
+        ],
+        [
+          "10:00",
+          "21:00"
+        ],
+        [
+          "10:00",
+          "21:00"
+        ],
+        [
+          "11:30",
+          "19:00"
+        ],
+        [
+          "00:00",
+          "00:00"
+        ]
+      ],
+      "Image": "../cafeimg/abraham.jpg",
+      "Location": "https://maps.app.goo.gl/ecJo6Xf97ZnGFegd8"
+    },
+    {
+      "Name": "웨이브온 커피",
+      "Description": "기장 해안가의 건축상 수상 카페",
+      "Cafenumber": 3,
+      "View": "Ocean",
+      "Menu": "Specialty",
+      "Interior": "Modern",
+      "Region": "기장군",
+      "Rating": {
+        "total": 8.5,
+        "count": 2,
+        "reviews": [
+          {
+            "username": "test2",
+            "rating": 5,
+            "content": "test2 review",
+            "date": "2025-06-03T05:06:40.458Z"
+          },
+          {
+            "username": "test1",
+            "rating": 3.5,
+            "content": "test1 review",
+            "date": "2025-06-03T05:07:16.967Z"
+          }
+        ]
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ]
+      ],
+      "Image": "../cafeimg/웨이브.jpg",
+      "Location": "https://goo.gl/maps/nuJipbpB43sNDUZr7"
+    },
+    {
+      "Name": "카페385",
+      "Description": "영도 해안가에서 바다를 바라보며 즐기는 디저트",
+      "Cafenumber": 4,
+      "Interior": "Modern",
+      "View": "Ocean",
+      "Menu": "Specialty",
+      "Region": "영도구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/카페385.jpg",
+      "Location": "https://maps.app.goo.gl/example4"
+    },
+    {
+      "Name": "카페 게으른 고양이",
+      "Description": "유기묘와 교감하는 고양이 카페",
+      "Cafenumber": 5,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Cozy & Cute",
+      "Region": "영도구",
+      "CafeType": "Pet",
+      "Rating": {
+        "total": 9.5,
+        "count": 2,
+        "reviews": [
+          {
+            "username": "test11",
+            "rating": 5,
+            "content": "The cat is so cute TT",
+            "date": "2025-06-06T07:22:32.585Z"
+          },
+          {
+            "username": "test10",
+            "rating": 4.5,
+            "content": "cozy and relaxing!",
+            "date": "2025-06-06T09:20:58.303Z"
+          }
+        ]
+      },
+      "Open": [
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/게으른고양이.jpg",
+      "Location": "https://maps.app.goo.gl/Z2NLbiY1LgBii7ze6"
+    },
+    {
+      "Name": "티앤북스",
+      "Description": "금정구의 북카페 복합문화공간",
+      "Cafenumber": 6,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Scandinavian",
+      "Region": "금정구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "Book",
+      "Open": [
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/티앤북스.jpg",
+      "Location": "https://maps.app.goo.gl/ZVSxL4gxYPMP4ki2A"
+    },
+    {
+      "Name": "레귤러하우스",
+      "Description": "1930년대 재즈 클럽을 모티브로 한 빈티지 인테리어 카페",
+      "Cafenumber": 7,
+      "View": "City",
+      "Menu": "Liqueur",
+      "Interior": "Vintage",
+      "Region": "중구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "Music",
+      "Open": [
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "00:00",
+          "00:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ]
+      ],
+      "Image": "../cafeimg/레귤러하우스.jpg",
+      "Location": "https://maps.app.goo.gl/ZA85sHEj79e7r1Je8"
+    },
+    {
+      "Name": "블랙업커피 을숙도점",
+      "Description": "낙동강변 드라이브스루 가능한 친환경 카페",
+      "Cafenumber": 8,
+      "View": "Rooftop",
+      "Menu": "Barista",
+      "Interior": "Classic",
+      "Region": "사하구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/블랙업커피.jpg",
+      "Location": "https://maps.app.goo.gl/niRFF7DxAK5tfGeg8"
+    },
+    {
+      "Name": "이상한 나라의 밀가루 공장",
+      "Description": "맛있는 브런치로 오픈런을 유발하는 북구의 유명 베이커리 카페",
+      "Cafenumber": 9,
+      "View": "City",
+      "Menu": "Bakery",
+      "Interior": "Cozy & Cute",
+      "Region": "북구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "10:30",
+          "21:00"
+        ],
+        [
+          "10:30",
+          "21:00"
+        ],
+        [
+          "10:30",
+          "21:00"
+        ],
+        [
+          "10:30",
+          "21:00"
+        ],
+        [
+          "10:30",
+          "21:00"
+        ],
+        [
+          "10:30",
+          "21:00"
+        ],
+        [
+          "10:30",
+          "21:00"
+        ]
+      ],
+      "Image": "../cafeimg/밀가루공장.jpg",
+      "Location": "https://maps.app.goo.gl/xKbZskn2hiGJGPFc8"
+    },
+    {
+      "Name": "고래상점로스터리",
+      "Description": "연제구의 아기자기한 커뮤니티 카페",
+      "Cafenumber": 10,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Cozy & Cute",
+      "Region": "연제구",
+      "Rating": {
+        "total": 15.5,
+        "count": 4,
+        "reviews": [
+          {
+            "username": "test1",
+            "rating": 5,
+            "content": "good",
+            "date": "2025-06-03T16:08:14.940Z"
+          },
+          {
+            "username": "test2",
+            "rating": 4.5,
+            "content": "ㅁㄴㅇ",
+            "date": "2025-06-04T10:27:51.371Z"
+          },
+          {
+            "username": "test5",
+            "rating": 3,
+            "content": "soso",
+            "date": "2025-06-05T07:12:10.138Z"
+          },
+          {
+            "username": "test11",
+            "rating": 3,
+            "content": "test11",
+            "date": "2025-06-06T07:24:33.211Z"
+          }
+        ]
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "00:00",
+          "00:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ],
+        [
+          "08:00",
+          "20:00"
+        ]
+      ],
+      "Image": "../cafeimg/고래상점.jpg",
+      "Location": "https://maps.app.goo.gl/s5MboEyProZLmdKY9"
+    },
+    {
+      "Name": "스미스엣홈",
+      "Description": "수영구의 미니멀리스트 드립 커피 전문점",
+      "Cafenumber": 11,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Modern",
+      "Region": "수영구",
+      "CafeType": "Pet",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "00:00",
+          "00:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "Image": "../cafeimg/스미스.jpg",
+      "Location": "https://maps.app.goo.gl/uzo9uuBU1hyAG81YA"
+    },
+    {
+      "Name": "듀스포레",
+      "Description": "남구의 실내정원 테라피 카페",
+      "Cafenumber": 12,
+      "View": "Forest",
+      "Menu": "Fruits",
+      "Interior": "Scandinavian",
+      "Region": "남구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "10:30",
+          "21:30"
+        ],
+        [
+          "10:30",
+          "21:30"
+        ],
+        [
+          "10:30",
+          "21:30"
+        ],
+        [
+          "10:30",
+          "21:30"
+        ],
+        [
+          "10:30",
+          "21:30"
+        ],
+        [
+          "10:30",
+          "21:30"
+        ],
+        [
+          "10:30",
+          "21:30"
+        ]
+      ],
+      "Image": "../cafeimg/듀스포레.jpg",
+      "Location": "https://maps.app.goo.gl/bucHb4FSLNGedKuQ7"
+    },
+    {
+      "Name": "VSANT",
+      "Description": "사상구의 창고 개조 인더스트리얼 카페",
+      "Cafenumber": 13,
+      "View": "Rooftop",
+      "Menu": "Specialty",
+      "Interior": "Industrial",
+      "Region": "사상구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ],
+        [
+          "11:00",
+          "24:00"
+        ]
+      ],
+      "Image": "../cafeimg/비상.jpg",
+      "Location": "https://maps.app.goo.gl/B5SQBg1jLbL6mF4j6"
+    },
+    {
+      "Name": "모모스커피",
+      "Description": "유명한 스페셜티 카페의 본점",
+      "Cafenumber": 14,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Industrial",
+      "Region": "금정구",
+      "Rating": {
+        "total": 8,
+        "count": 2,
+        "reviews": [
+          {
+            "username": "test1",
+            "rating": 5,
+            "content": "good~~",
+            "date": "2025-06-03T16:07:59.046Z"
+          },
+          {
+            "username": "test5",
+            "rating": 3,
+            "content": "soso",
+            "date": "2025-06-05T07:11:31.687Z"
+          }
+        ]
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ],
+        [
+          "08:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/모모스.jpg",
+      "Location": "https://maps.app.goo.gl/ti2ohzJB81hGMxaN7"
+    },
+    {
+      "Name": "다온나루",
+      "Description": "강서구의 한옥 현대화 로스터리",
+      "Cafenumber": 15,
+      "View": "Forest",
+      "Menu": "Barista",
+      "Interior": "Classic",
+      "Region": "강서구",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "11:00",
+          "23:00"
+        ],
+        [
+          "11:00",
+          "23:00"
+        ],
+        [
+          "11:00",
+          "23:00"
+        ],
+        [
+          "11:00",
+          "23:00"
+        ],
+        [
+          "11:00",
+          "23:00"
+        ],
+        [
+          "11:00",
+          "23:00"
+        ],
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "Image": "../cafeimg/다온나루.jpg",
+      "Location": "https://maps.app.goo.gl/RfX5aQ9ZRaHCwSLHA"
+    },
+    {
+      "Name": "사랑방다실",
+      "Description": "사랑스러운 분위기의 과일 디저트 맛집",
+      "Cafenumber": 16,
+      "Interior": "Cozy & Cute",
+      "View": "City",
+      "Menu": "Fruits",
+      "Region": "부산진구",
+      "Rating": {
+        "total": 52.5,
+        "count": 12,
+        "reviews": [
+          {
+            "username": "test1",
+            "rating": 4.5,
+            "content": "NICE FRUITS!!",
+            "date": "2025-06-04T10:47:23.494Z"
+          },
+          {
+            "username": "test3",
+            "rating": 5,
+            "content": "boss!!\nI love you so much.",
+            "date": "2025-06-04T10:53:00.427Z"
+          },
+          {
+            "username": "test5",
+            "rating": 3.5,
+            "content": "soso^^:",
+            "date": "2025-06-05T07:13:48.274Z"
+          },
+          {
+            "username": "test2",
+            "rating": 5,
+            "content": "you must go",
+            "date": "2025-06-05T07:16:11.164Z"
+          },
+          {
+            "username": "test4",
+            "rating": 5,
+            "content": "soooooo goooooood",
+            "date": "2025-06-05T07:16:40.278Z"
+          },
+          {
+            "username": "test6",
+            "rating": 5,
+            "content": "test6",
+            "date": "2025-06-05T07:17:11.973Z"
+          },
+          {
+            "username": "test7",
+            "rating": 5,
+            "content": "test7",
+            "date": "2025-06-05T07:17:40.908Z"
+          },
+          {
+            "username": "test8",
+            "rating": 5,
+            "content": "test8",
+            "date": "2025-06-05T07:18:08.342Z"
+          },
+          {
+            "username": "test9",
+            "rating": 5,
+            "content": "test9",
+            "date": "2025-06-05T07:18:31.300Z"
+          },
+          {
+            "username": "test10",
+            "rating": 4.5,
+            "content": "test10",
+            "date": "2025-06-06T07:04:47.013Z"
+          },
+          {
+            "username": "test11",
+            "rating": 0,
+            "content": "test11",
+            "date": "2025-06-06T07:26:33.056Z"
+          },
+          {
+            "username": "test12",
+            "rating": 5,
+            "content": "test12",
+            "date": "2025-06-06T09:52:03.594Z"
+          }
+        ]
+      },
+      "CafeType": "none",
+      "Open": [
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ]
+      ],
+      "Image": "../cafeimg/sar.jpg",
+      "Location": "https://maps.app.goo.gl/Ud8QEy7oFDAy9nCw8"
+    },
+    {
+      "Name": "도그어바웃",
+      "Description": "강아지들과 함께하는 다대포에서의 커피타임",
+      "Cafenumber": 17,
+      "View": "City",
+      "Menu": "Bakery",
+      "Interior": "Modern",
+      "Region": "사하구구",
+      "CafeType": "Pet",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/도그어바웃.jpg",
+      "Location": "https://maps.app.goo.gl/uzo9uuBU1hyAG81YA"
+    },
+    {
+      "Name": "디아펠리즈",
+      "Description": "송도해수욕장 인근 브런치 카페",
+      "Cafenumber": 18,
+      "View": "Ocean",
+      "Menu": "Bakery",
+      "Interior": "Modern",
+      "Region": "서구",
+      "CafeType": "none",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ],
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/디아펠리즈.jpg",
+      "Location": "https://maps.app.goo.gl/sXDVkeccFU3rEVkv7"
+    },
+    {
+      "Name": "초량1941",
+      "Description": "초량동의 레트로 감성 카페",
+      "Cafenumber": 19,
+      "View": "Forest",
+      "Menu": "Barista",
+      "Interior": "Classic",
+      "Region": "동구",
+      "CafeType": "none",
+      "Rating": {
+        "total": 2,
+        "count": 1,
+        "reviews": [
+          {
+            "username": "test1",
+            "rating": 2,
+            "content": "hmm...",
+            "date": "2025-06-06T09:35:52.929Z"
+          }
+        ]
+      },
+      "Open": [
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ],
+        [
+          "11:00",
+          "19:00"
+        ]
+      ],
+      "Image": "../cafeimg/초량1941.jpg",
+      "Location": "https://maps.app.goo.gl/P4jztYcsk5vHGera6"
+    },
+    {
+      "Name": "수안커피컴퍼니 커피하우스",
+      "Description": "웨이팅 공간도 아름다운, 수안역 근처 로스터리",
+      "Cafenumber": 20,
+      "View": "City",
+      "Menu": "Bakery",
+      "Interior": "Scandinavian",
+      "Region": "동래구",
+      "CafeType": "none",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "11:00",
+          "21:00"
+        ],
+        [
+          "11:00",
+          "21:00"
+        ],
+        [
+          "11:00",
+          "21:00"
+        ],
+        [
+          "11:00",
+          "21:00"
+        ],
+        [
+          "11:00",
+          "21:00"
+        ],
+        [
+          "11:00",
+          "21:00"
+        ],
+        [
+          "11:00",
+          "21:00"
+        ]
+      ],
+      "Image": "../cafeimg/수안커피하우스.jpg",
+      "Location": "https://maps.app.goo.gl/WeAyFFFMQy5fmVKw7"
+    },
+    {
+      "Name": "더멜트",
+      "Description": "시크한 인테리어가 특징인 동래구 커피숍",
+      "Cafenumber": 21,
+      "View": "City",
+      "Menu": "Bakery",
+      "Interior": "Modern",
+      "Region": "동래구",
+      "CafeType": "none",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ],
+        [
+          "11:00",
+          "22:00"
+        ]
+      ],
+      "Image": "../cafeimg/더멜트.jpg",
+      "Location": "https://maps.app.goo.gl/TpeH7An4dQHtgkGB8"
+    },
+    {
+      "Name": "버터빌",
+      "Description": "흑백 인테리어가 인상적인 전포동의 카페",
+      "Cafenumber": 22,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Modern",
+      "Region": "부산진구",
+      "CafeType": "none",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "10:00",
+          "00:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ],
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "Image": "../cafeimg/local.jpg",
+      "Location": "https://maps.app.goo.gl/jZjgtEGcwEpujus98"
+    },
+    {
+      "Name": "덱스커피 전포점",
+      "Description": "서면의 유명한 공연 카페",
+      "Cafenumber": 23,
+      "View": "City",
+      "Menu": "Barista",
+      "Interior": "Vintage",
+      "Region": "부산진구",
+      "CafeType": "Music",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "12:00",
+          "21:00"
+        ],
+        [
+          "00:00",
+          "00:00"
+        ],
+        [
+          "13:00",
+          "23:00"
+        ],
+        [
+          "13:00",
+          "23:00"
+        ],
+        [
+          "13:00",
+          "23:00"
+        ],
+        [
+          "13:30",
+          "23:00"
+        ],
+        [
+          "12:00",
+          "23:00"
+        ]
+      ],
+      "Image": "../cafeimg/덱스.jpg",
+      "Location": "https://maps.app.goo.gl/YNXXY991ZR5SstVe8"
+    },
+    {
+      "Name": "비커피",
+      "Description": "해리단길의 인테리어 포토존 카페",
+      "Cafenumber": 24,
+      "View": "City",
+      "Menu": "Bakery",
+      "Interior": "Modern",
+      "Region": "해운대구",
+      "CafeType": "none",
+      "Rating": {
+        "total": 0,
+        "count": 0,
+        "reviews": []
+      },
+      "Open": [
+        [
+          "10:00",
+          "23:00"
+        ],
+        [
+          "10:00",
+          "23:00"
+        ],
+        [
+          "10:00",
+          "23:00"
+        ],
+        [
+          "10:00",
+          "23:00"
+        ],
+        [
+          "10:00",
+          "23:00"
+        ],
+        [
+          "10:00",
+          "23:00"
+        ],
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "Image": "../cafeimg/bee.jpg",
+      "Location": "https://maps.app.goo.gl/TA8kzpm7HSvVSJf88"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ app.use(cors({
 }));
 
 function getUsersFilePath() {
-  return path.join(__dirname, 'users.json');
+  return path.join(__dirname, 'jsonfiles', 'users.json');
 }
 
 function readUsers() {
@@ -172,7 +172,7 @@ app.get('/api/user', (req, res) => {
 app.get('/api/reviews', (req, res) => {
   const cafeName = req.query.name;
 
-  fs.readFile(path.join(__dirname, 'cafe.json'), (err, data) => {
+  fs.readFile(path.join(__dirname, 'jsonfiles','cafe.json'), (err, data) => {
     if (err) return res.status(500).send('server error');
 
     const cafes = JSON.parse(data).cafes;
@@ -206,7 +206,7 @@ app.post('/api/reviews', (req, res) => {
     const hasReviewed = user.reviews.some(r => r.cafeName === cafeName);
     if (hasReviewed) return res.status(400).send('Already reviewed');
 
-    fs.readFile(path.join(__dirname, 'cafe.json'), (err, data) => {
+    fs.readFile(path.join(__dirname, 'jsonfiles','cafe.json'), (err, data) => {
       if (err) throw err;
 
       const cafeData = JSON.parse(data);
@@ -228,7 +228,7 @@ app.post('/api/reviews', (req, res) => {
         date: new Date().toISOString()
       });
 
-      fs.writeFileSync(path.join(__dirname, 'cafe.json'), JSON.stringify(cafeData, null, 2));
+      fs.writeFileSync(path.join(__dirname, 'jsonfiles','cafe.json'), JSON.stringify(cafeData, null, 2));
       saveUsers(users);
 
       res.sendStatus(200);
@@ -244,9 +244,9 @@ app.get("/api/review", (req, res) => {
     return res.status(400).json({ error: "NEED CAFENAME : 400 ERROR" });
   }
 
-  fs.readFile(path.join(__dirname, "cafe.json"), "utf8", (err, data) => {
+  fs.readFile(path.join(__dirname, "/jsonfiles/cafe.json"), "utf8", (err, data) => {
     if (err) {
-      console.error("fail to read cafe.json", err);
+      console.error("fail to read /jsonfiles/cafe.json", err);
       return res.status(500).json({ error: "server error" });
     }
 
@@ -285,9 +285,9 @@ app.post("/api/review", (req, res) => {
     return res.status(400).json({ success: false, message: "invalid request" });
   }
 
-  fs.readFile(path.join(__dirname, "cafe.json"), "utf8", (err, data) => {
+  fs.readFile(path.join(__dirname, "/jsonfiles/cafe.json"), "utf8", (err, data) => {
     if (err) {
-      console.error("fail to read cafe.json", err);
+      console.error("fail to read /jsonfiles/cafe.json", err);
       return res.status(500).json({ success: false, message: "server error" });
     }
 
@@ -322,9 +322,9 @@ app.post("/api/review", (req, res) => {
     parsed.cafes = cafes;
     updatedData = JSON.stringify(parsed, null, 2);
 
-    fs.writeFile(path.join(__dirname, "cafe.json"), updatedData, "utf8", (writeErr) => {
+    fs.writeFile(path.join(__dirname, "/jsonfiles/cafe.json"), updatedData, "utf8", (writeErr) => {
       if (writeErr) {
-        console.error("fail to write cafe.json", writeErr);
+        console.error("fail to write /jsonfiles/cafe.json", writeErr);
         return res.status(500).json({ success: false, message: "server error" });
       }
 

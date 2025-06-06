@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taste of Busan – Café Discovery</title>
-    <link rel="stylesheet" href="cafe.css?v=1">
+    <title>Busan Café Discovery</title>
+    <link rel="stylesheet" href="/cssfiles/cafe.css?v=1">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="open"
                 onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
-                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <img src="/iconimg/memoimg.png" alt="Note" class="shakeTarget">
                 <span>Open</span>
             </button>
             <ul class="custom-dropdown" id="open-dropdown">
@@ -38,7 +38,7 @@
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="view"
                 onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
-                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <img src="/iconimg/memoimg.png" alt="Note" class="shakeTarget">
                 <span>View</span>
             </button>
             <ul class="custom-dropdown" id="view-dropdown">
@@ -52,7 +52,7 @@
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="menu"
                 onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
-                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <img src="/iconimg/memoimg.png" alt="Note" class="shakeTarget">
                 <span>Menu</span>
             </button>
             <ul class="custom-dropdown" id="menu-dropdown">
@@ -67,7 +67,7 @@
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="interior"
                 onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
-                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <img src="/iconimg/memoimg.png" alt="Note" class="shakeTarget">
                 <span>Interior</span>
             </button>
             <ul class="custom-dropdown" id="interior-dropdown">
@@ -83,7 +83,7 @@
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="region"
                 onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 2000);">
-                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <img src="/iconimg/memoimg.png" alt="Note" class="shakeTarget">
                 <span>Region</span>
             </button>
             <ul class="custom-dropdown grid-dropdown" id="region-dropdown">
@@ -109,7 +109,7 @@
         <div class="note-wrapper">
             <button type="button" class="note-btn" data-type="rating"
                 onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 3000);">
-                <img src="./memoimg.png" alt="Note" class="shakeTarget">
+                <img src="/iconimg/memoimg.png" alt="Note" class="shakeTarget">
                 <span>Rating</span>
             </button>
             <ul class="custom-dropdown" id="rating-dropdown">
@@ -121,69 +121,7 @@
             </ul>
         </div>
     </div>
-
-    <script>
-        const USER_COOKIE_KEY = "CAFE_USER";
-
-        function getLoggedInUser() {
-            const cookieString = document.cookie;
-            const match = cookieString.match(new RegExp(`${USER_COOKIE_KEY}=([^;]+)`));
-            return match ? JSON.parse(decodeURIComponent(match[1])) : null;
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const user = getLoggedInUser();
-            const container = document.getElementById("top-buttons");
-
-            if (!container) return;
-
-            if (user) {
-                container.innerHTML = `
-        <button style="width: 100px;" onclick="location.href='/logout'">Logout</button>
-        <button style="width: 100px;" onclick="location.href='/bookmarklist.html'">Bookmark</button>
-      `;
-            } else {
-                container.innerHTML = `
-        <button style="width: 100px;" onclick="location.href='/signup.html'">Signup</button>
-        <button style="width: 100px;" onclick="location.href='/login.html'">Login</button>
-      `;
-            }
-        });
-        document.querySelectorAll('.shakeTarget').forEach(img => {
-            img.addEventListener('click', () => {
-                img.classList.add('shake');
-                setTimeout(() => {
-                    img.classList.remove('shake');
-                }, 500); // 애니메이션 시간과 일치
-            });
-        });
-        document.querySelectorAll('.note-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const type = btn.getAttribute('data-type');
-                const dropdown = document.getElementById(type + '-dropdown');
-
-                const isVisible = dropdown.classList.contains('show');
-                document.querySelectorAll('.custom-dropdown').forEach(dd => {
-                    dd.classList.remove('show');
-                });
-                if (!isVisible) {
-                    dropdown.classList.add('show');
-                }
-            });
-        });
-
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.custom-dropdown').forEach(dd => {
-                dd.classList.remove('show');
-            });
-        });
-        function goToCafeList(type, value) {
-            const url = `cafelist.html?type=${encodeURIComponent(type)}&value=${encodeURIComponent(value)}`;
-            window.location.href = url;
-        }
-
-    </script>
+    <script src="/jsfiles/maincafe.js"></script>
 </body>
 
 </html>
