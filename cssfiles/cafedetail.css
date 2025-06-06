@@ -59,7 +59,7 @@ a {
 .detail-info {
   position: relative;
   display: inline-block;
-  margin-left: 30px;
+  margin-left: auto;
   padding: 20px;
   border-radius: 8px;
   color: #fff;
@@ -294,8 +294,7 @@ a {
 
 @media (min-width: 768px) {
   .detail-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     text-align: center;
     gap: 20px;
   }
@@ -303,6 +302,7 @@ a {
   .detail-info,
   .review-section {
     flex: 1;
+    text-align: center;
     justify-content: center;
   }
   .detail-info .info span {
