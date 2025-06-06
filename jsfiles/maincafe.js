@@ -8,7 +8,7 @@ function getLoggedInUser() {
 
 window.addEventListener('DOMContentLoaded', () => {
     const user = getLoggedInUser();
-    const container = document.getElementById("top-buttons");
+    const container = document.getElementById("footer-buttons");
 
     if (!container) return;
 

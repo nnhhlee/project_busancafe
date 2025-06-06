@@ -21,17 +21,16 @@ h3 {
   color: white;
 }
 
-#top-buttons {
-  margin-right: 7%;
+#footer-buttons {
   position: fixed;
-  margin-bottom: 15px;
-  margin-right: 40px;
+  bottom: 15px;
+  right: 60px;
   display: flex;
   gap: 15px;
   z-index: 1000;
 }
 
-#top-buttons button {
+#footer-buttons button {
   border: none;
   background: none;
   display: flex;
@@ -45,20 +44,20 @@ h3 {
   transition: all 0.3s ease;
 }
 
-#top-buttons button img {
+#footer-buttons button img {
   width: 100px;
   height: 30px;
   margin-top: 5px;
 }
 
-#top-buttons button span {
+#footer-buttons button span {
   color: white;
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-#top-buttons button:hover {
+#footer-buttons button:hover {
   transform: translateY(-20px);
 }
 
