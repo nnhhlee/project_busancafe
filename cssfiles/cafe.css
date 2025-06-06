@@ -24,7 +24,7 @@ h3 {
 #top-buttons {
   margin-right: 7%;
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   right: 40px;
   display: flex;
   gap: 15px;
