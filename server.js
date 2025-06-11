@@ -39,34 +39,47 @@ function findUserByUsername(username) {
 
 app.post('/signup', (req, res) => {
   const { username, email, name, password } = req.body;
+
   if (!username || !email || !name || !password) {
     return res.status(400).send(`
-            <script>
-                alert('please input all the information');
-                window.history.back();
-            </script>
-        `);
+      <script>
+        alert('please input all the information');
+        window.history.back();
+      </script>
+    `);
+  }
+
+  const allowedDomains = ['@gmail.com', '@naver.com', '@daum.net', '@kakao.com', '@pusan.ac.kr'];
+  const emailIsValid = allowedDomains.some(domain => email.endsWith(domain));
+
+  if (!emailIsValid) {
+    return res.status(400).send(`
+      <script>
+        alert('Only emails from ${allowedDomains.join(', ')} are allowed.');
+        window.history.back();
+      </script>
+    `);
   }
 
   const existingUser = findUserByUsername(username);
   if (existingUser) {
     return res.status(400).send(`
-            <script>
-                alert('Username already exists: ${username}');
-                window.history.back();
-            </script>
-        `);
+      <script>
+        alert('Username already exists: ${username}');
+        window.history.back();
+      </script>
+    `);
   }
 
   const users = readUsers();
   const existingEmail = users.find(user => user.email === email);
   if (existingEmail) {
     return res.status(400).send(`
-            <script>
-                alert('Email already exists.');
-                window.history.back();
-            </script>
-        `);
+      <script>
+        alert('Email already exists.');
+        window.history.back();
+      </script>
+    `);
   }
 
   const newUser = {
@@ -91,12 +104,13 @@ app.post('/signup', (req, res) => {
 
   res.cookie(USER_COOKIE_KEY, JSON.stringify(userCookie));
   res.send(`
-        <script>
-            alert('Welcome to BUSAN CAFE DISCOVERY!');
-            window.location.href = '/';
-        </script>
-    `);
+    <script>
+      alert('Welcome to BUSAN CAFE DISCOVERY!');
+      window.location.href = '/';
+    </script>
+  `);
 });
+
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
