@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -186,7 +188,7 @@ app.get('/api/user', (req, res) => {
 app.get('/api/reviews', (req, res) => {
   const cafeName = req.query.name;
 
-  fs.readFile(path.join(__dirname, 'jsonfiles','cafe.json'), (err, data) => {
+  fs.readFile(path.join(__dirname, 'jsonfiles', 'cafe.json'), (err, data) => {
     if (err) return res.status(500).send('server error');
 
     const cafes = JSON.parse(data).cafes;
@@ -220,7 +222,7 @@ app.post('/api/reviews', (req, res) => {
     const hasReviewed = user.reviews.some(r => r.cafeName === cafeName);
     if (hasReviewed) return res.status(400).send('Already reviewed');
 
-    fs.readFile(path.join(__dirname, 'jsonfiles','cafe.json'), (err, data) => {
+    fs.readFile(path.join(__dirname, 'jsonfiles', 'cafe.json'), (err, data) => {
       if (err) throw err;
 
       const cafeData = JSON.parse(data);
@@ -242,7 +244,7 @@ app.post('/api/reviews', (req, res) => {
         date: new Date().toISOString()
       });
 
-      fs.writeFileSync(path.join(__dirname, 'jsonfiles','cafe.json'), JSON.stringify(cafeData, null, 2));
+      fs.writeFileSync(path.join(__dirname, 'jsonfiles', 'cafe.json'), JSON.stringify(cafeData, null, 2));
       saveUsers(users);
 
       res.sendStatus(200);
@@ -470,6 +472,52 @@ app.delete('/api/bookmark', (req, res) => {
   } catch (error) {
     console.error('Remove bookmark error:', error);
     res.status(500).json({ message: 'server error' });
+  }
+});
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT, 10),
+  secure: process.env.SMTP_SECURE === 'true',
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
+  }
+});
+
+
+app.post('/send-mail', async (req, res) => {
+  const { from, to, subject, body } = req.body;
+
+  if (!from || !to || !subject || !body) {
+    return res.status(400).json({ success: false, error: 'Missing required fields.' });
+  }
+  if (body.length > 400) {
+    return res.status(400).json({ success: false, error: 'Message body exceeds 400 chars.' });
+  }
+
+
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.SMTP_USER,
+    to,
+    subject,
+    text: body  // body 안에 이미 요청자 이메일 포함되어 있음
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error sending mail:', error);
+    res.status(500).json({ error: 'Failed to send email' });
   }
 });
 

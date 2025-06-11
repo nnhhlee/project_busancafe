@@ -158,5 +158,14 @@
     "password": "test13",
     "joinDate": "2025-06-06T11:16:09.915Z",
     "bookmark": []
+  },
+  {
+    "id": 1749659020436,
+    "username": "siha",
+    "email": "siha0906@naver.com",
+    "name": "니하",
+    "password": "siha",
+    "joinDate": "2025-06-11T16:23:40.436Z",
+    "bookmark": []
   }
 ]

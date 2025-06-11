@@ -120,7 +120,31 @@
             </ul>
         </div>
     </div>
+    <div id="email-modal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header" id="modal-title"></div>
+      <form id="email-form">
+        <input type="hidden" name="from" id="email-from">
+        <input type="hidden" name="to" value="siha0906@gmail.com">
+        <div>
+          <label for="email-subject"></label><br>
+          <input type="text" id="email-subject" name="subject" readonly style="width:100%; margin-bottom:0.5rem;">
+        </div>
+        <div>
+          <label for="email-body"></label><br>
+          <textarea id="email-body" name="body" maxlength="400" required></textarea>
+          <div id="char-count" style="color: gray;">0 / 400</div>
+        </div>
+        <div style="margin-top:1rem; text-align:right;">
+          <button type="button" class="btn-close" id="btn-cancel">Cancel</button>
+          <button type="submit" class="btn-submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
     <script src="/jsfiles/maincafe.js"></script>
 </body>
-<footer><div id="footer-buttons"></div></footer>
+<footer>
+<div id="mail-buttons" style="display: flex; justify-content: left; margin-left: 50px;"></div>
+<div id="footer-buttons"></div></footer>
 </html>
