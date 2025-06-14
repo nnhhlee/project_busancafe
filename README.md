@@ -1,23 +1,23 @@
 # project_busancafe
 
 
-##[Final Demo Link!!](https://project-busancafe.onrender.com/)
+## [Final Demo Link!!](https://project-busancafe.onrender.com/)
 
 
 
-##[Project Report](https://drive.google.com/file/d/1brm1WQ2x76oQkl1Ym0NWYXiH62XZQLd3/view?usp=drive_link)
+## [Project Report](https://drive.google.com/file/d/1brm1WQ2x76oQkl1Ym0NWYXiH62XZQLd3/view?usp=drive_link)
 
 
 
-##[initial presentation(project plan)](https://docs.google.com/presentation/d/1C3UMgsZizE-oJeqStoQbAeXczDzArZtB/edit?usp=drive_link&ouid=115499713668441234775&rtpof=true&sd=true)
+## [initial presentation(project plan)](https://docs.google.com/presentation/d/1C3UMgsZizE-oJeqStoQbAeXczDzArZtB/edit?usp=drive_link&ouid=115499713668441234775&rtpof=true&sd=true)
 
 
 
-##[second presentation](https://docs.google.com/presentation/d/1mfDTIeIhyjlH5SD_P7Z4tLdOsCf8NM9e/edit?usp=drive_link&ouid=115499713668441234775&rtpof=true&sd=true)
+## [second presentation](https://docs.google.com/presentation/d/1mfDTIeIhyjlH5SD_P7Z4tLdOsCf8NM9e/edit?usp=drive_link&ouid=115499713668441234775&rtpof=true&sd=true)
 
 
 
-###implementation log after second presentation :
+### implementation log after second presentation :
 
 
 6/11 only valid email available (when sign up)
