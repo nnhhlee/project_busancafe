@@ -231,8 +231,8 @@
       "Region": "영도구",
       "CafeType": "Pet",
       "Rating": {
-        "total": 9.5,
-        "count": 2,
+        "total": 14.5,
+        "count": 3,
         "reviews": [
           {
             "username": "test11",
@@ -245,6 +245,12 @@
             "rating": 4.5,
             "content": "cozy and relaxing!",
             "date": "2025-06-06T09:20:58.303Z"
+          },
+          {
+            "username": "siha",
+            "rating": 5,
+            "content": "good",
+            "date": "2025-06-14T06:33:48.866Z"
           }
         ]
       },

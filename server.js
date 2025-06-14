@@ -138,6 +138,7 @@ app.post('/login', (req, res) => {
   if (password !== user.password) {
     return res.status(400).send(`
             <script>
+                alert('WRONG PASSWORD!');
                 window.history.back();
             </script>
         `);
@@ -509,7 +510,7 @@ app.post('/send-mail', async (req, res) => {
     from: process.env.SMTP_USER,
     to,
     subject,
-    text: body  // body 안에 이미 요청자 이메일 포함되어 있음
+    text: body
   };
 
   try {

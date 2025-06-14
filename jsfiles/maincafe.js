@@ -114,7 +114,7 @@ form.addEventListener('submit', e => {
         from: usermail.value,
         to: 'siiihhaaa@pusan.ac.kr',
         subject: subjectInput.value,
-        body: `USER ${user.name} sent email. \n\n REPLY TO: ${usermail.value}\n\n${mailcontext.value}`
+        body: `USER ${user.name} sent email.\n\nREPLY TO: ${usermail.value}\n\n${mailcontext.value}`
     };
 
     fetch('/send-mail', {
