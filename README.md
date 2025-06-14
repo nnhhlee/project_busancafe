@@ -18,3 +18,8 @@ second presentation : [https://docs.google.com/presentation/d/1mfDTIeIhyjlH5SD_P
 6/12 added email button!!
 CHECK DETAILS : (https://docs.google.com/document/d/1rDL0nvoK3lJ1vJ71w1s82gOhvP_ditjAHi_H3-59faY/edit?usp=drive_link)
 
+
+6/14 mobile view modification!! 
+
+
+6/15 added button : go to prev and next cafe of filtered list!! (in cafedetail.html)

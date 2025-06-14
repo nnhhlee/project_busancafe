@@ -484,8 +484,8 @@
       "Interior": "Cozy & Cute",
       "Region": "연제구",
       "Rating": {
-        "total": 15.5,
-        "count": 4,
+        "total": 20.5,
+        "count": 5,
         "reviews": [
           {
             "username": "test1",
@@ -510,6 +510,12 @@
             "rating": 3,
             "content": "test11",
             "date": "2025-06-06T07:24:33.211Z"
+          },
+          {
+            "username": "siha",
+            "rating": 5,
+            "content": "good",
+            "date": "2025-06-14T08:04:10.705Z"
           }
         ]
       },

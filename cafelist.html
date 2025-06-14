@@ -12,7 +12,7 @@
     <header>
         <button class="back-btn"
             style="background-color: rgb(3, 47, 14); font-weight: bold; width: 50px; height: 50px; font-size:xx-large;"
-            onclick="history.back()">←</button>
+            onclick="goBackToMain()">←</button>
         <br>
         <h1 id="page-title">Café List</h1>
         <br><br>
@@ -37,7 +37,9 @@
             <tbody id="cafe-list"></tbody>
         </table>
     </main>
-
+    <br>
+    <div id="pagination-container" class="pagination-container"></div>
+    <div id="page-info" class="page-info"></div>
     <script src="/jsfiles/cafelist.js"></script>
 </body>
 

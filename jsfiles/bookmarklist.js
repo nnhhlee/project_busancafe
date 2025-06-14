@@ -6,6 +6,10 @@ let allCafes = [];
 let currentUser;
 const activeFilters = {};
 
+let currentPage = 1;
+const itemsPerPage = 15;
+let filteredCafes = [];
+
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const userRes = await fetch('/api/user', {
@@ -17,19 +21,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         currentUser = await userRes.json();
         const bookmarks = currentUser.bookmark || [];
-
         const cafeRes = await fetch('../jsonfiles/cafe.json?v=' + Date.now());
         const cafeData = await cafeRes.json();
-
         allCafes = cafeData.cafes;
 
-        const bookmarkedCafes = allCafes.filter(cafe =>
+        filteredCafes = allCafes.filter(cafe =>
             bookmarks.includes(cafe.Cafenumber)
         );
 
-        renderCafeList(bookmarkedCafes);
+        filteredCafes.sort((a, b) => {
+            const isOpenA = checkOpenStatus(a);
+            const isOpenB = checkOpenStatus(b);
+            if (isOpenA !== isOpenB) return isOpenB ? 1 : -1;
+            return getCafeRating(b) - getCafeRating(a);
+        });
+
         generateDynamicFilters();
-        applyFilters();
+        renderPaginatedCafeList();
+        renderPagination();
 
     } catch (error) {
         console.error('Error:', error);
@@ -37,6 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.href = '/login.html';
     }
 });
+
 
 const initialType = rawType
     ? rawType.charAt(0).toUpperCase() + rawType.slice(1)
@@ -120,7 +130,11 @@ function updateURL() {
 }
 
 function applyFilters() {
-    let filtered = allCafes.filter(cafe =>
+    const bookmarkedCafes = allCafes.filter(cafe => 
+        currentUser.bookmark.includes(cafe.Cafenumber)
+    );
+    
+    filteredCafes = bookmarkedCafes.filter(cafe =>
         Object.entries(activeFilters).every(([key, value]) => {
             if (key === 'Rating') {
                 const avg = getCafeRating(cafe);
@@ -131,18 +145,19 @@ function applyFilters() {
                 return !(open === '00:00' && close === '00:00');
             }
             return cafe[key] === value;
-        }) &&
-        currentUser.bookmark.includes(cafe.Cafenumber)
+        })
     );
 
-    filtered.sort((a, b) => {
+    filteredCafes.sort((a, b) => {
         const isOpenA = checkOpenStatus(a);
         const isOpenB = checkOpenStatus(b);
         if (isOpenA !== isOpenB) return isOpenB ? 1 : -1;
         return getCafeRating(b) - getCafeRating(a);
     });
 
-    renderCafeList(filtered);
+    currentPage = 1;
+    renderPaginatedCafeList();
+    renderPagination();
 }
 
 function checkOpenStatus(cafe) {
@@ -154,9 +169,14 @@ function checkOpenStatus(cafe) {
     return currentMinutes >= openMinutes && currentMinutes <= closeMinutes;
 }
 
-function renderCafeList(cafes) {
+
+function renderPaginatedCafeList() {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const cafesToShow = filteredCafes.slice(startIndex, endIndex);
+
     const listEl = document.getElementById('cafe-list');
-    listEl.innerHTML = cafes.map(cafe => {
+    listEl.innerHTML = cafesToShow.map(cafe => {
         let iconHTML = '';
         if (cafe.CafeType === 'Book') {
             iconHTML = `<img src="../iconimg/book.png" alt="Book" style="width:1em; height:1em; vertical-align: middle; margin-left: 0.3em;">`;
@@ -167,18 +187,78 @@ function renderCafeList(cafes) {
         }
 
         return `
-      <tr class="${checkOpenStatus(cafe) ? 'open' : 'closed'}">
-        <td>
-          <a href="cafedetail.html?name=${encodeURIComponent(cafe.Name)}&id=${cafe.Cafenumber}">
-            ${cafe.Name} ${iconHTML}
-          </a>
-        </td>
-        <td>${cafe.View}</td>
-        <td>${cafe.Menu}</td>
-        <td>${cafe.Interior}</td>
-        <td>${cafe.Region}</td>
-        <td>${getCafeRating(cafe).toFixed(1)}</td>
-      </tr>
-    `;
+            <tr class="${checkOpenStatus(cafe) ? 'open' : 'closed'}">
+                <td>
+                    <a href="cafedetail.html?name=${encodeURIComponent(cafe.Name)}&id=${cafe.Cafenumber}">
+                        ${cafe.Name} ${iconHTML}
+                    </a>
+                </td>
+                <td>${cafe.View}</td>
+                <td>${cafe.Menu}</td>
+                <td>${cafe.Interior}</td>
+                <td>${cafe.Region}</td>
+                <td>${getCafeRating(cafe).toFixed(1)}</td>
+            </tr>
+        `;
     }).join('');
+}
+
+function renderPagination() {
+    const totalPages = Math.ceil(filteredCafes.length / itemsPerPage);
+    const paginationContainer = document.getElementById('pagination-container');
+
+    if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+    }
+
+    let paginationHTML = '';
+
+    paginationHTML += `
+        <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" 
+                onclick="changePage(${currentPage - 1})" 
+                ${currentPage === 1 ? 'disabled' : ''}>
+            BACK
+        </button>
+    `;
+
+    for (let i = 1; i <= totalPages; i++) {
+        paginationHTML += `
+            <button class="pagination-btn ${currentPage === i ? 'active' : ''}" 
+                    onclick="changePage(${i})">
+                ${i}
+            </button>
+        `;
+    }
+
+    paginationHTML += `
+        <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" 
+                onclick="changePage(${currentPage + 1})" 
+                ${currentPage === totalPages ? 'disabled' : ''}>
+            NEXT
+        </button>
+    `;
+
+    paginationContainer.innerHTML = paginationHTML;
+
+    const pageInfo = document.getElementById('page-info');
+    if (pageInfo) {
+        const startItem = (currentPage - 1) * itemsPerPage + 1;
+        const endItem = Math.min(currentPage * itemsPerPage, filteredCafes.length);
+        pageInfo.textContent = `${startItem} ~ ${endItem} / BOOKMARK CAFE TOTAL : ${filteredCafes.length}`;
+    }
+}
+
+window.changePage = function (page) {
+    const totalPages = Math.ceil(filteredCafes.length / itemsPerPage);
+
+    if (page < 1 || page > totalPages) {
+        return;
+    }
+
+    currentPage = page;
+    renderPaginatedCafeList();
+    renderPagination();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -17,9 +17,16 @@
     <br><br>
   </header>
   <main>
-    <button class="back-btn" onclick="history.back()">←</button>
+    <button class="back-btn" onclick="goBackToCafeList()">←</button>
     <div style="border-color: white;"></div>
+    
     <div class="detail-container">
+      <button id="prev-cafe" class="side-nav-btn left-nav">
+            <span>&lt</span>
+        </button>
+        <button id="next-cafe" class="side-nav-btn right-nav">
+            <span>></span>
+        </button>
       <div class="detail-info" id="cafe-detail"></div>
 
       <div class="review-section">

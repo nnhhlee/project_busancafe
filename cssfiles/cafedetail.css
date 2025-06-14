@@ -50,6 +50,7 @@ a {
 
 .detail-container {
   display: flex;
+  padding: 0 50px;
   flex-direction: column;
   gap: 20px;
   width: 100%;
@@ -188,6 +189,7 @@ a {
   border-top: 1px solid white;
   padding-top: 10px;
   margin-bottom: 10px;
+  max-height: 800px;
 }
 
 .review-card {
@@ -244,10 +246,10 @@ a {
   color: white;
   margin-right: 8px;
 }
-#review-form select {
+#review-form select{
   box-sizing: border-box;
   padding: 6px;
-  width: 30%;
+  width: 15%;
   border-radius: 4px;
   border: 1px solid gray;
   background: white;
@@ -256,13 +258,13 @@ a {
 }
 #review-form .review-input-wrapper {
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  align-items: stretch;
   margin-bottom: 10px;
 }
 
 #review-form textarea {
-  width: 100%;
+  flex: 1;
   height: 80px;
   padding: 8px;
   border: 1px solid gray;
@@ -275,14 +277,15 @@ a {
 }
 
 #review-form button {
-  width: auto;
-  padding: 10px 20px;
+  width: 80px;
+  height: 80px;
   background-color: white;
   color: rgb(3, 47, 14);
   font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  padding: 0 8px;
   box-sizing: border-box;
 }
 #review-form button:hover {
@@ -305,14 +308,52 @@ a {
   }
 }
 
+.side-nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 20px 10px;
+    transition: all 0.3s ease;
+}
+
+.side-nav-btn:disabled {
+    display: none;
+}
+
+.left-nav {
+    left: 20px;
+}
+
+.right-nav {
+    right: 20px;
+}
+
+.side-nav-btn:not(:disabled):hover span {
+    color: white;
+    transform: scale(2);
+    transition: transform 0.3s ease;
+}
+
+.side-nav-btn span {
+    display: inline-block;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
 @media (max-width: 767px) {
   body {
     padding: 10px;
   }
   .detail-container {
     flex-direction: column;
-    gap: 10px;
-    padding: 0;
+    gap: 5px;
+    padding: 0 50px;
     margin: 0;
   }
   .detail-info,
@@ -338,4 +379,20 @@ a {
     padding: 10px;
     width: 100%;
   }
+  .side-nav-btn {
+        font-size: 30px;
+        padding: 15px 8px;
+    }
+    
+    .left-nav {
+        left: 30px;
+    }
+    
+    .right-nav {
+        right: 30px;
+    }
+    
+    .side-nav-btn:not(:disabled):hover span {
+        transform: scale(1.8);
+    }
 }

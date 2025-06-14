@@ -76,13 +76,11 @@ header {
 }
 
 .book {
-  background: #e3f2fd;
-  color: #1976d2;
+  background: white;
 }
 
 .pet {
-  background: #f3e5f5;
-  color: #7b1fa2;
+  background: white;
 }
 
 h1 {
@@ -138,6 +136,43 @@ main {
 
 #cafe-table a:visited {
   color: inherit;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.pagination-btn {
+    padding: 8px 12px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background-color: white;
+}
+
+.pagination-btn.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.pagination-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.page-info {
+    text-align: center;
+    margin: 10px 0;
+    color: gray;
+    font-size: 14px;
 }
 
 
